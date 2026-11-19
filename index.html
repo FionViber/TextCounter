@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file: blob:; style-src 'self' file:; img-src 'self' file:; connect-src 'none'; worker-src 'self' file: blob:; base-uri 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e6f0f8">
+  <title>Word counter · FionViber</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="stylesheet" href="assets/counter.css">
+  <script defer src="count-engine.js"></script>
+  <script defer src="ui.js"></script>
+</head>
+<body>
+  <a class="skip" href="#source" data-text="skip">Skip to text input</a>
+  <header class="masthead">
+    <div class="container mast-inner">
+      <a class="brand" href="#workspace" data-directory-link>
+        <svg class="brand-mark" viewBox="0 0 53 60" aria-hidden="true"><path d="M2 56V4h18M33 4h18v52H33M12 16h9v28h-9M32 16h9v28h-9M21 16h11M21 44h11"/></svg>
+        <span>FionViber</span>
+      </a>
+      <div class="mast-actions">
+        <a class="directory-link" href="https://fionviber.github.io/" data-directory-link-text>Project directory</a>
+        <label for="interface-language" class="locale-control mast-locale">
+          <span class="sr-only" data-text="language">Interface language</span>
+          <select id="interface-language"><option value="en-US" lang="en">English</option><option value="zh-Hans" lang="zh-Hans">简体中文</option><option value="zh-Hant" lang="zh-Hant">繁體中文</option></select>
+        </label>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Page navigation" data-label="nav">
+      <div class="container nav-inner">
+        <a href="#workspace" data-text="title" aria-current="location">Word counter</a>
+        <a href="#guide" data-text="guide">Counting guide</a>
+      </div>
+    </nav>
+  </header>
+  <main class="container" id="workspace" tabindex="-1">
+    <div class="intro">
+      <h1 data-text="title">Word counter</h1>
+      <p data-text="intro">Compare word and character counts for multilingual text.</p>
+    </div>
+    <div class="workspace">
+      <section class="panel editor" aria-labelledby="input-label">
+        <h2><label id="input-label" for="source" data-text="input">Text</label></h2>
+        <textarea id="source" dir="auto" placeholder="Type or paste your text here." data-placeholder="placeholder" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea>
+      </section>
+      <section class="panel counts" id="counts" aria-labelledby="counts-title" aria-busy="false">
+        <h2 id="counts-title" data-text="counts">Counts</h2>
+        <dl class="main-counts">
+          <div class="main-count"><dt data-text="wordCount">Word count (Word-compatible)</dt><dd data-metric="word.words">0</dd></div>
+          <div class="main-count"><dt data-text="unicodeCount">Word count (Unicode default)</dt><dd data-metric="unicode.defaultWords">0</dd></div>
+          <div class="main-count"><dt data-text="segmentedCount">Linguistic word count</dt><dd data-metric="unicode.words">0</dd></div>
+        </dl>
+      </section>
+    </div>
+    <p id="status" role="status" aria-atomic="true"></p>
+    <section class="panel details-panel" id="details" aria-labelledby="details-title" aria-busy="false">
+      <h2 id="details-title" data-text="details">Text details</h2>
+      <dl class="details-grid">
+        <div><dt data-text="graphemes">Unicode characters (grapheme clusters)</dt><dd data-metric="unicode.graphemes">0</dd></div>
+        <div><dt data-text="withSpaces">Characters with spaces (Word-compatible)</dt><dd data-metric="word.charactersWithSpaces">0</dd></div>
+        <div><dt data-text="withoutSpaces">Characters without spaces (Word-compatible)</dt><dd data-metric="word.characters">0</dd></div>
+        <div><dt data-text="han">Han characters</dt><dd data-metric="unicode.han">0</dd></div>
+        <div><dt data-text="sentences">Sentences</dt><dd data-metric="unicode.sentences">0</dd></div>
+        <div><dt data-text="paragraphs">Paragraphs</dt><dd data-metric="unicode.paragraphs">0</dd></div>
+        <div><dt data-text="lines">Text lines</dt><dd data-metric="unicode.lines">0</dd></div>
+      </dl>
+    </section>
+    <details class="guide panel" id="guide">
+      <summary><span data-text="guide">Counting guide</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg></summary>
+      <div class="guide-body">
+        <dl class="definitions">
+          <div><dt data-text="wordMethod">Word-compatible counts</dt><dd data-text="wordDefinition">The word and character counts approximate Microsoft Word’s desktop Word Count dialog for plain text. “Peer-to-peer” counts as one word. The character counts use code points, omit tabs and line breaks, and differ in whether they include spaces.</dd></div>
+          <div><dt data-text="defaultMethod">Unicode word count</dt><dd data-text="defaultDefinition">The default word boundaries in Unicode 18.0 (Standard Annex #29) divide the text into segments. Each segment containing a letter or number counts as one word. Each Han ideograph normally forms its own segment.</dd></div>
+          <div><dt data-text="segmentMethod">Linguistic word count</dt><dd data-text="segmentDefinition">Language-aware segmentation recognizes words across scripts, including Chinese words with multiple characters. Numbers count as word segments. “Peer-to-peer” has three word segments. Results can vary with the browser’s language data.</dd></div>
+          <div><dt data-text="unicodeMethod">Unicode characters</dt><dd data-text="unicodeDefinition">Under Unicode 18.0, one extended grapheme cluster counts as one character, including a letter with a combining accent or a family emoji. Spaces and explicit line breaks count. A carriage return followed by a line feed counts once.</dd></div>
+          <div><dt data-text="hanMethod">Han characters</dt><dd data-text="hanDefinition">Counts unified and assigned compatibility Han ideographs, plus 〇. This includes Chinese characters used in Japanese and Korean text.</dd></div>
+          <div><dt data-text="structureMethod">Sentences, paragraphs, and text lines</dt><dd data-text="structureDefinition">Each sentence segment that contains a letter or number counts once. A paragraph is a nonblank segment between paragraph breaks, including ordinary newline characters. Text lines include blank lines and a final empty line after a line break. Screen wrapping leaves the line count unchanged.</dd></div>
+        </dl>
+        <p class="references"><span data-text="references">References</span><a href="https://logicutil.com/guides/word-count-test" target="_blank" rel="noopener noreferrer" data-text="logicSource">LogicUtil word count tests</a><a href="https://help.across.net/en/v9/als-user/data/comparisonofthewordcountinacrossandmsword.html" target="_blank" rel="noopener noreferrer" data-text="acrossSource">Across comparison with Word</a><a href="https://www.unicode.org/reports/tr29/tr29-49.html" target="_blank" rel="noopener noreferrer" data-text="unicodeSource">Unicode text segmentation</a></p>
+      </div>
+    </details>
+    <noscript><p>Enable JavaScript to count text. 请启用 JavaScript 以统计文本。</p></noscript>
+  </main>
+  <footer><div class="container foot-inner">
+    <span class="footer-brand">FionViber</span>
+  </div></footer>
+</body>
+</html>
