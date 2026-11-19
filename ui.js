@@ -160,7 +160,10 @@
     const link = document.querySelector("[data-directory-link]");
     const label = document.querySelector("[data-directory-link-text]");
     if (link) link.href = directory;
-    if (label) label.textContent = translations[locale].directory;
+    if (label) {
+      label.href = directory;
+      label.textContent = translations[locale].directory;
+    }
   }
 
   function scheduleCount() {

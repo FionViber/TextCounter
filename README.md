@@ -1,6 +1,6 @@
 # FionViber Text Counter
 
-[Open the tool on GitHub Pages](https://fionviber.github.io/TextCounter/)
+[GitHub Pages](https://fionviber.github.io/TextCounter/) · [Cloudflare Pages](https://text-counter-738.pages.dev/)
 
 A browser-based multilingual text counter with three independent views of the text:
 
