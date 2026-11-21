@@ -91,11 +91,6 @@ button:focus-visible, a:focus-visible, select:focus-visible, textarea:focus-visi
 }
 .main-count, .details-grid > div { transition: background-color .18s ease, border-color .18s ease; }
 .main-count:hover, .details-grid > div:hover { background: var(--pale); }
-@media (max-width: 620px) {
-  .workspace { grid-template-columns: minmax(0, 1fr); }
-  .mast-inner { flex-wrap: wrap; }
-  .mast-actions { width: 100%; justify-content: space-between; }
-}
 @media (prefers-reduced-motion: reduce) {
   .main-count, .details-grid > div { transition: none; }
 }
@@ -103,8 +98,8 @@ button:focus-visible, a:focus-visible, select:focus-visible, textarea:focus-visi
   .mast-inner { min-height: 69px; }
   .brand { font-size: 25px; gap: 8px; }
   .brand-mark { width: 25px; height: 28px; }
-  .mast-inner { align-items: flex-start; flex-direction: column; padding-block: 13px; }
-  .mast-actions { width: 100%; justify-content: space-between; }
+  .mast-inner { flex-wrap: wrap; gap: 6px 14px; padding-block: 8px; }
+  textarea { height: clamp(8.25rem, 21svh, 10rem); }
   .nav a { padding-inline: 13px; }
   .intro { padding-block: 20px 16px; }
   .editor, .counts { padding: 14px 16px 16px; }
