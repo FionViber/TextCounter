@@ -12,6 +12,7 @@
   <script defer src="count-engine.js"></script>
   <script defer src="ui.js"></script>
   <script defer src="assets/locale-picker.js"></script>
+  <link rel="stylesheet" href="assets/locale.css">
 </head>
 <body>
   <a class="skip" href="#source" data-text="skip">Skip to text input</a>
@@ -23,17 +24,19 @@
       </a>
       <div class="mast-actions">
         <a class="directory-link" href="https://fionviber.github.io/" data-directory-link-text>Project directory</a>
-        <label for="interface-language" class="locale-control mast-locale">
-          <img class="locale-icon" src="assets/world.svg" alt="">
-          <span class="sr-only" data-text="language">Interface language</span>
-          <select id="interface-language"><option value="en-US" lang="en">English</option><option value="zh-Hans" lang="zh-Hans">简体中文</option><option value="zh-Hant" lang="zh-Hant">繁體中文</option></select>
-        </label>
+        <div class="asq-locale-field"><span class="sr-only" id="asq-lang-name" data-text="language">Interface language</span><select aria-labelledby="asq-lang-name" id="interface-language"><option value="en-US" lang="en">English</option><option value="zh-Hans" lang="zh-Hans">简体中文</option><option value="zh-Hant" lang="zh-Hant">繁體中文</option></select></div>
       </div>
     </div>
     <nav class="nav" aria-label="Page navigation" data-label="nav">
       <div class="container nav-inner">
-        <a href="#workspace" data-text="title" aria-current="location">Word counter</a>
-        <a href="#guide" data-text="guide">Counting guide</a>
+        <a href="#workspace" aria-current="location"><svg class="asq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2" />
+  <path d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" /></svg><span data-text="title">Word counter</span></a>
+        <a href="#guide"><svg class="asq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+  <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+  <path d="M3 6l0 13" />
+  <path d="M12 6l0 13" />
+  <path d="M21 6l0 13" /></svg><span data-text="guide">Counting guide</span></a>
       </div>
     </nav>
   </header>

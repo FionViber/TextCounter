@@ -13,18 +13,12 @@ textarea, select { color: inherit; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--navy); font-size: 28px; font-weight: 720; letter-spacing: -.045em; line-height: 1.2; }
 .brand-mark { width: 30px; height: 34px; fill: none; color: var(--blue); stroke: currentColor; stroke-width: 3; }
 .directory-link { color: var(--link); font-size: 14px; font-weight: 650; text-decoration: underline; text-underline-offset: .16em; }
-.directory-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+.directory-link:focus-visible { outline: 2px solid var(--blue); outline-offset:0; }
 .mast-actions { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 8px 16px; }
 .mast-locale { color: var(--muted); }
-.locale-icon { width: 18px; height: 18px; margin-inline-end: 6px; fill: none; stroke: currentColor; stroke-width: 1.6; }
 .mast-locale select { min-height: 44px; border: 1px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); }
 .mast-locale:focus-within { outline: 2px solid var(--link); outline-offset: 0; }
 .mast-locale select:focus-visible { outline: none; }
-.locale-button { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: inherit; }
-.locale-button img { width: 18px; height: 18px; }
-.locale-menu { position: absolute; z-index: 5; margin-top: 2px; border: 1px solid var(--line); background: var(--surface); }
-.locale-option { display: block; width: 100%; min-height: 44px; padding: 8px 12px; border: 0; background: var(--surface); color: var(--ink); text-align: start; }
-.locale-option:hover, .locale-option[aria-selected="true"] { background: var(--pale); }
 .nav { background: var(--navy); color: white; }
 .nav-inner { display: flex; flex-wrap: wrap; }
 .nav a { min-height: 44px; padding: 10px 19px; font-size: 14px; font-weight: 600; line-height: 24px; }
@@ -93,7 +87,7 @@ select { min-height: 44px; max-width: 100%; padding: 8px 32px 8px 12px; font-siz
 .panel:focus-within { border-color: var(--blue); }
 button:focus-visible, a:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 3px solid var(--blue);
-  outline-offset: 3px;
+  outline-offset:0;
 }
 .main-count, .details-grid > div { transition: background-color .18s ease, border-color .18s ease; }
 .main-count:hover, .details-grid > div:hover { background: var(--pale); }

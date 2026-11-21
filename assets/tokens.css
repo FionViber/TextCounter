@@ -51,7 +51,7 @@ button, a, summary, input, select, textarea { touch-action: manipulation; }
 button { cursor: pointer; }
 :focus-visible {
   outline: 3px solid var(--link);
-  outline-offset: 3px;
+  outline-offset:0;
 }
 [hidden] { display: none !important; }
 .container {
