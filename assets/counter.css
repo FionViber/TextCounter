@@ -16,6 +16,10 @@ textarea, select { color: inherit; }
 .directory-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
 .mast-actions { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 8px 16px; }
 .mast-locale { color: var(--muted); }
+.locale-icon { width: 18px; height: 18px; margin-inline-end: 6px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.mast-locale select { min-height: 44px; border: 1px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); }
+.mast-locale:focus-within { outline: 2px solid var(--link); outline-offset: 0; }
+.mast-locale select:focus-visible { outline: none; }
 .nav { background: var(--navy); color: white; }
 .nav-inner { display: flex; flex-wrap: wrap; }
 .nav a { min-height: 44px; padding: 10px 19px; font-size: 14px; font-weight: 600; line-height: 24px; }
