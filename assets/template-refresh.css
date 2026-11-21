@@ -1,0 +1,64 @@
+/* FionViber Website Template refresh. The counting engine and UI markup stay intact. */
+:root {
+  --template-shadow: 4px 4px 0 var(--navy);
+  --template-shadow-soft: 4px 4px 0 var(--line);
+}
+.masthead {
+  box-shadow: 0 4px 0 var(--navy);
+}
+.mast-inner, .nav-inner {
+  position: relative;
+}
+.brand, .directory-link, .nav a, button, select, textarea, summary {
+  transition: color .18s ease, background-color .18s ease, border-color .18s ease,
+    box-shadow .18s ease, transform .18s ease;
+}
+.brand:hover {
+  color: var(--blue);
+}
+.nav a:hover {
+  box-shadow: inset 0 -4px 0 var(--accent);
+}
+.workspace {
+  align-items: stretch;
+}
+.panel {
+  box-shadow: var(--template-shadow-soft);
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+.panel:focus-within {
+  box-shadow: var(--template-shadow);
+  transform: translate(-1px, -1px);
+}
+textarea {
+  border: 1px solid var(--line);
+  box-shadow: inset 0 0 0 1px transparent;
+}
+textarea:hover {
+  border-color: var(--accent);
+}
+textarea:focus {
+  border-color: var(--blue);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+.main-count, .details-grid > div {
+  border-inline-start: 4px solid var(--accent);
+  transition: background-color .18s ease, border-color .18s ease;
+}
+.main-count:hover, .details-grid > div:hover {
+  background: var(--pale);
+  border-color: var(--blue);
+}
+.guide {
+  overflow: clip;
+}
+.guide summary:hover {
+  color: var(--blue);
+  background: var(--pale);
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand, .directory-link, .nav a, button, select, textarea, summary, .panel,
+  .main-count, .details-grid > div {
+    transition: none;
+  }
+}
