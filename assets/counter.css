@@ -20,6 +20,11 @@ textarea, select { color: inherit; }
 .mast-locale select { min-height: 44px; border: 1px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); }
 .mast-locale:focus-within { outline: 2px solid var(--link); outline-offset: 0; }
 .mast-locale select:focus-visible { outline: none; }
+.locale-button { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ink); font: inherit; }
+.locale-button img { width: 18px; height: 18px; }
+.locale-menu { position: absolute; z-index: 5; margin-top: 2px; border: 1px solid var(--line); background: var(--surface); }
+.locale-option { display: block; width: 100%; min-height: 44px; padding: 8px 12px; border: 0; background: var(--surface); color: var(--ink); text-align: start; }
+.locale-option:hover, .locale-option[aria-selected="true"] { background: var(--pale); }
 .nav { background: var(--navy); color: white; }
 .nav-inner { display: flex; flex-wrap: wrap; }
 .nav a { min-height: 44px; padding: 10px 19px; font-size: 14px; font-weight: 600; line-height: 24px; }
