@@ -79,6 +79,23 @@ select { min-height: 44px; max-width: 100%; padding: 8px 32px 8px 12px; font-siz
   .main-count dt { font-size: 14px; }
   .details-grid > div { padding: 12px 16px; }
 }
+.masthead { border-bottom: 1px solid var(--line); }
+.panel { border-color: var(--line); }
+.panel:focus-within { border-color: var(--blue); }
+button:focus-visible, a:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+.main-count, .details-grid > div { transition: background-color .18s ease, border-color .18s ease; }
+.main-count:hover, .details-grid > div:hover { background: var(--pale); }
+@media (max-width: 620px) {
+  .workspace { grid-template-columns: minmax(0, 1fr); }
+  .mast-inner { flex-wrap: wrap; }
+  .mast-actions { width: 100%; justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .main-count, .details-grid > div { transition: none; }
+}
 @media (max-width: 559px) {
   .mast-inner { min-height: 69px; }
   .brand { font-size: 25px; gap: 8px; }
